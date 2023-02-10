@@ -6,13 +6,13 @@ import Bamboo from '../../../public/images/Bamboo.png'
 
 export const About = () => {
   return (
-    <div className='my-[110px] mx-[220px] max-[1470px]:mx-[120px] max-[1100px]:mx-[60px]'>
+    <div className='my-[110px] mx-[220px] max-[1470px]:mx-[120px] max-[1100px]:mx-[80px] max-[1100px]:my-[70px]'>
       <div className='flex justify-between gap-[60px] max-[1270px]:flex-col max-[1270px]:gap-[0]'>
-        <h2 className='text-green bg-dark w-[30%] capitalize max-[1270px]:w-[100%]'>We Help choose the most suitable plants for you</h2>
-        <p className='bg-dark w-[70%] pt-4 max-[1270px]:w-[100%]'>Our selection includes a wide variety of flowers, from classic roses to exotic orchids, as well as a variety of lush indoor and outdoor plants and also offer unique floral arrangements that are perfect for any occasion, whether you're looking to brighten up your home or send a thoughtful gift. </p>
+        <h2 className='text-green w-[30%] capitalize max-[1270px]:w-[100%]'>We Help choose the most suitable plants for you</h2>
+        <p className='w-[70%] pt-4 max-[1270px]:w-[100%]'>Our selection includes a wide variety of flowers, from classic roses to exotic orchids, as well as a variety of lush indoor and outdoor plants and also offer unique floral arrangements that are perfect for any occasion, whether you're looking to brighten up your home or send a thoughtful gift. </p>
       </div>
 
-      <div className='flex gap-16 mt-[70px] max-[1120px]:gap-10 max-[1100px]:flex-col'>
+      <div className='flex gap-16 mt-[70px] max-[1120px]:gap-12 max-[1100px]:flex-col'>
         <div className='border-2 border-green px-12 py-8 rounded-[10px] basis-1/3'>
           <img src={IndoorPlant} alt="" />
           <h4 className='text-green pt-4 pb-3'>Indoor Plants</h4>

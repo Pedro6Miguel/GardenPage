@@ -1,12 +1,14 @@
 import React from 'react'
-import { About } from '../../sections/About/About'
 import { Hero } from '../../sections/Hero/Hero'
+import { About } from '../../sections/About/About'
 
 export const Home = () => {
   return (
     <div>
       <Hero />
-      <About />
+      <div className='max-w-[2000px] m-auto'>
+        <About />
+      </div>
     </div>
   )
 }
