@@ -11,11 +11,11 @@ export const Gallery = () => {
     <div className='my-[110px]'>
         <h2 className='text-green text-center mb-6'>Our Gallery View</h2>
         <div className='grid grid-cols-3 gap-4'>
-            <img className='row-span-2 w-[100%] h-[666px] object-cover' src={Gallery1} alt="" />
-            <img className='w-[100%] h-[325px] object-cover' src={Gallery2} alt="" />
-            <img className='w-[100%] h-[325px] object-cover' src={Gallery3} alt="" />
-            <img className='w-[100%] h-[325px] object-cover' src={Gallery4} alt="" />
-            <img className='w-[100%] h-[325px] object-cover' src={Gallery5} alt="" />
+            <img className='row-span-2 w-[100%] h-[666px] object-cover max-[980px]:h-[415px]' src={Gallery1} alt="" />
+            <img className='w-[100%] h-[325px] object-cover max-[980px]:h-[200px]' src={Gallery2} alt="" />
+            <img className='w-[100%] h-[325px] object-cover max-[980px]:h-[200px]' src={Gallery3} alt="" />
+            <img className='w-[100%] h-[325px] object-cover max-[980px]:h-[200px]' src={Gallery4} alt="" />
+            <img className='w-[100%] h-[325px] object-cover max-[980px]:h-[200px]' src={Gallery5} alt="" />
         </div>
     </div>
   )
