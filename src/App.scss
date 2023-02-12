@@ -46,3 +46,19 @@ p {
 button {
   border-radius: 4px;
 }
+
+input {
+  padding-left: 20px;
+  color: #f8f8f8;
+  outline: none;
+}
+
+input::placeholder {
+  color: #f8f8f8;
+}
+
+.cta {
+  background-image: url(../public/images/CtaImg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}

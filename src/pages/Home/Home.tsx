@@ -3,6 +3,8 @@ import { Hero } from '../../sections/Hero/Hero'
 import { About } from '../../sections/About/About'
 import { ProductsInfo } from '../../sections/ProductsInfo/ProductsInfo'
 import { Gallery } from '../../sections/Gallery/Gallery'
+import { Reviews } from '../../sections/Reviews/Reviews'
+import { CTA } from '../../sections/CTA/CTA'
 
 export const Home = () => {
   return (
@@ -13,6 +15,10 @@ export const Home = () => {
       </div>
       <ProductsInfo />
       <Gallery />
+      <div className='max-w-[2000px] m-auto'>
+        <Reviews />
+      </div>
+      <CTA />
     </div>
   )
 }
