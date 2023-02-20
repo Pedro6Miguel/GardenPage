@@ -16,7 +16,7 @@ export const Blog = () => {
             </div>
         ))}*/}
         <h2 className='text-green capitalize text-center pb-10'>Interesting blog to read</h2>
-        <div className='flex gap-16'>
+        <div className='flex gap-16 max-[1120px]:gap-12'>
             {BLOG_DATA.map((data, i) =>(
             <div onClick={() => {navigate(`/${data.id}`);}} className='border-2 flex flex-col justify-between' key={data.id}>
                 <img className='bg-green rounded-[10px] h-[300px] object-cover' src={data.image} alt="" />
