@@ -5,6 +5,7 @@ import { ProductsInfo } from '../../sections/ProductsInfo/ProductsInfo'
 import { Gallery } from '../../sections/Gallery/Gallery'
 import { Reviews } from '../../sections/Reviews/Reviews'
 import { CTA } from '../../sections/CTA/CTA'
+import { Blog } from '../../sections/Blog/Blog'
 
 export const Home = () => {
   return (
@@ -19,6 +20,7 @@ export const Home = () => {
         <Reviews />
       </div>
       <CTA />
+      <Blog />
     </div>
   )
 }
