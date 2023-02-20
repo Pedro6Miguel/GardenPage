@@ -15,21 +15,25 @@ export const Blog = () => {
                 <p className='text-text font-normal text-center text-[34px]'>{data.title}</p>
             </div>
         ))}*/}
-        <h2 className='text-green capitalize text-center'>Interesting blog to read</h2>
-        <div>
-            <img src="https://media.discordapp.net/attachments/905837522813337613/1077060272541405355/Post3.png" alt="" />
-            <h4>The benefits of plants in your room</h4>
-            <h5>Plants in your room can bring numerous benefits, such as improved air quality, reduced stress, and increased feelings of well-being....</h5>
-            <div className='flex justify-between'>
-                <div className='flex items-center gap-2'>
-                    <img className='w-[18px] h-[18px]' src={DateIcon} alt="" />
-                    <p className='text-[#121212a1] text-base'>January 20, 2023</p>
-                </div>
-                <div className='flex items-center gap-2'>
-                    <p className='text-base text-green font-bold'>Read more</p>
-                    <img className='w-[16px] h-[12px]' src={Arrow} alt="" />
+        <h2 className='text-green capitalize text-center pb-10'>Interesting blog to read</h2>
+        <div className='flex gap-16'>
+            {BLOG_DATA.map((data, i) =>(
+            <div onClick={() => {navigate(`/${data.id}`);}} className='border-2 flex flex-col justify-between' key={data.id}>
+                <img className='bg-green rounded-[10px] h-[300px] object-cover' src={data.image} alt="" />
+                <h4 className='text-green pt-2 pb-2'>{data.title}</h4>
+                <h5 className='text-dark pb-4'>{data.description}</h5>
+                <div className='flex justify-between'>
+                    <div className='flex items-center gap-2'>
+                        <img className='w-[18px] h-[18px]' src={DateIcon} alt="" />
+                        <p className='text-[#121212a1] text-base'>{data.date}</p>
+                    </div>
+                    <div className='flex items-center gap-2'>
+                        <p className='text-base text-green font-bold'>Read more</p>
+                        <img className='w-[16px] h-[12px]' src={Arrow} alt="" />
+                    </div>
                 </div>
             </div>
+            ))}
         </div>
     </div>
   )

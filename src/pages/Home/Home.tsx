@@ -20,7 +20,9 @@ export const Home = () => {
         <Reviews />
       </div>
       <CTA />
-      <Blog />
+      <div className='max-w-[2000px] m-auto'>
+        <Blog />
+      </div>
     </div>
   )
 }
