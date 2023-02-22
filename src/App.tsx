@@ -13,7 +13,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />}></Route>
-        <Route path=':id' element={<PostDetails />}></Route>
+        <Route path='/:id' element={<PostDetails />}></Route>
       </Routes>
       <Footer />
     </Router>
