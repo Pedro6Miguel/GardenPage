@@ -2,8 +2,12 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import { BLOG_DATA, BlogData } from './BlogData';
 
+type PostInterface = {
+  id: any;
+}
+
 export const PostDetails = () => {
-  const {id} = useParams()
+  const {id} = useParams<PostInterface>()
 
   return (
     <div className='my-[110px] mx-[220px] max-[1470px]:mx-[120px] max-[1100px]:mx-[80px] max-[1100px]:my-[70px]'>
