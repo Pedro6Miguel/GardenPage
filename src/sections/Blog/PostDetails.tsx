@@ -7,7 +7,7 @@ export const PostDetails = () => {
 
   return (
     <div className='pt-32'>
-        <h1>{BLOG_DATA[id].name}</h1>
+        <h1>{BLOG_DATA[id].title}</h1>
     </div>
   )
 }
