@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import Logo from '../../../public/images/Logo.png'
 
 export const Navbar = () => {
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(false)
 
   return (
     <div className={open ? 'overflow-hidden' : 'border-1'}>
@@ -23,11 +23,11 @@ export const Navbar = () => {
     </label>
     </nav>
     { open ? <div className='bg-green w-[100%] h-[100vh] flex justify-center items-center overflow-hidden'>
-      <ul className='flex gap-8 items-center flex-col'>
-        <li className='text-white text-[40px] font-semibold uppercase'>About</li>
-        <li className='text-white text-[40px] font-semibold uppercase'>Planters</li>
-        <li className='text-white text-[40px] font-semibold uppercase'>Contact</li>
-        <li className='text-white text-[40px] font-semibold uppercase'>Call Us</li>
+      <ul className='flex gap-12 items-center flex-col'>
+        <li className='text-white text-[36px] font-semibold uppercase tracking-[6px]'>About</li>
+        <li className='text-white text-[36px] font-semibold uppercase tracking-[6px]'>Planters</li>
+        <li className='text-white text-[36px] font-semibold uppercase tracking-[6px]'>Contact</li>
+        <li className='text-white text-[36px] font-semibold uppercase tracking-[6px]'>Call Us</li>
       </ul>
     </div>
     : ''
