@@ -14,11 +14,6 @@ export const Blog = () => {
   
     return (
     <div className='my-[110px] mx-[220px] max-[1470px]:mx-[120px] max-[1100px]:mx-[80px] max-[1100px]:my-[70px]'>
-        {/*{BLOG_DATA.map((data, i) =>(
-            <div onClick={() => {navigate(`/${data.id}`);}} key={data.id} className='flex flex-col items-center gap-[10px] cursor-pointer'>
-                <p className='text-text font-normal text-center text-[34px]'>{data.title}</p>
-            </div>
-        ))}*/}
         <h2 className='text-green capitalize text-center pb-10'>Interesting blog to read</h2>
         <div className='flex gap-16 max-[1120px]:gap-12 max-[1285px]:flex-col'>
             {BLOG_DATA.map((data, i) =>(

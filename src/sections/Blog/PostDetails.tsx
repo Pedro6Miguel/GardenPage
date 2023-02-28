@@ -10,7 +10,7 @@ export const PostDetails = () => {
   const {id} = useParams<PostInterface>()
 
   return (
-    <div className='my-[110px] mx-[220px] max-[1470px]:mx-[120px] max-[1100px]:mx-[80px] max-[1100px]:my-[70px]'>
+    <div className='relative my-[110px] mx-[220px] max-[1470px]:mx-[120px] max-[1100px]:mx-[80px] max-[1100px]:my-[70px]'>
       <p className='mt-[160px] mb-[10px] text-center font-medium text-[#8F8F8F]'>News</p>
       <h2 className='text-green text-center text-[42px]'>{BLOG_DATA[id].title}</h2>
       <p className='text-center'>{BLOG_DATA[id].description}</p>

@@ -4,13 +4,24 @@ import Logo from '../../../public/images/Logo.png'
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false)
+  const [navbar, setNavbar] = useState(false)
+
+  const changeBackground = () => {
+    if(window.scrollY >= 2) {
+      setNavbar(true)
+    } else {
+      setNavbar(false)
+    }
+  }
+
+  window.addEventListener('scroll', changeBackground)
 
   const valueOverflow = open ? 'hidden' : 'auto';
   document.body.style.overflow = valueOverflow;
 
   return (
-    <div className={open ? 'overflow-hidden sticky top-0' : 'border-1 sticky top-0'}>
-    <nav className='absolute pt-8 w-[100%] h-[100px] flex justify-between items-center px-[220px] max-[1470px]:px-[120px] max-[1100px]:px-[80px]'>
+    <div className={open ? 'overflow-hidden sticky' : 'sticky top-0'}>
+    <nav className={navbar ? 'active absolute w-[100%] h-[100px] flex justify-between items-center px-[220px] max-[1470px]:px-[120px] max-[1100px]:px-[80px]' :  'bg-dark absolute w-[100%] h-[100px] flex justify-between items-center px-[220px] max-[1470px]:px-[120px] max-[1100px]:px-[80px]'}>
       <img className='h-[64px]' src={Logo} alt="" />
       <ul className='flex gap-8 items-center max-[880px]:hidden'>
         <li className='text-[18px] text-white'>About</li>
@@ -25,7 +36,7 @@ export const Navbar = () => {
         <span></span>
     </label>
     </nav>
-    { open ? <div className='bg-green w-[100%] h-[100vh] flex justify-center items-center overflow-hidden'>
+    { open ? <div className='bg-button w-[100%] h-[100vh] flex justify-center items-center overflow-hidden'>
       <ul className='flex gap-12 items-center flex-col'>
         <li className='text-white text-[36px] font-semibold uppercase tracking-[6px]'>About</li>
         <li className='text-white text-[36px] font-semibold uppercase tracking-[6px]'>Planters</li>
