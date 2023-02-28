@@ -21,7 +21,7 @@ export const Navbar = () => {
 
   return (
     <div className={open ? 'overflow-hidden sticky' : 'sticky top-0'}>
-    <nav className={navbar ? 'active absolute w-[100%] h-[100px] flex justify-between items-center px-[220px] max-[1470px]:px-[120px] max-[1100px]:px-[80px]' :  'bg-dark absolute w-[100%] h-[100px] flex justify-between items-center px-[220px] max-[1470px]:px-[120px] max-[1100px]:px-[80px]'}>
+    <nav className={navbar ? 'active shadow absolute w-[100%] h-[100px] flex justify-between items-center px-[220px] max-[1470px]:px-[120px] max-[1100px]:px-[80px]' :  'absolute w-[100%] h-[100px] flex justify-between items-center px-[220px] max-[1470px]:px-[120px] max-[1100px]:px-[80px]'}>
       <img className='h-[64px]' src={Logo} alt="" />
       <ul className='flex gap-8 items-center max-[880px]:hidden'>
         <li className='text-[18px] text-white'>About</li>
