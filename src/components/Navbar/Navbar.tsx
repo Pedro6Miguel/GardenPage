@@ -4,6 +4,8 @@ import Logo from '../../../public/images/Logo.png'
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false)
+  const valueOverflow = open ? 'hidden' : 'auto';
+  document.body.style.overflow = valueOverflow;
 
   return (
     <div className={open ? 'overflow-hidden' : 'border-1'}>
