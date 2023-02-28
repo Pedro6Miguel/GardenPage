@@ -9,7 +9,7 @@ import Pruning from '../../../public/images/Pruning.png'
 export const ProductsInfo = () => {
   return (
     <div className='flex h-[800px] max-[1070px]:hidden'>
-        <img className='basis-1/2 object-cover relative' src={ProductsImg} alt="" />
+        <img className='basis-1/2 object-cover' src={ProductsImg} alt="" />
         <div className='basis-1/2 grid grid-cols-2 bg-[#F8F8F8] max-[1320px]:grid-cols-1'>
             <div className='p-16 max-[1400px]:p-8 max-[1320px]'>
                 <div className='flex flex-col max-[1320px]:flex-row max-[1320px]:items-center'>

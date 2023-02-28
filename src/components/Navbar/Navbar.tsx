@@ -4,12 +4,13 @@ import Logo from '../../../public/images/Logo.png'
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false)
+
   const valueOverflow = open ? 'hidden' : 'auto';
   document.body.style.overflow = valueOverflow;
 
   return (
-    <div className={open ? 'overflow-hidden' : 'border-1'}>
-    <nav className='bg-dark pt-8 w-[100%] h-[100px] absolute top-0 z-10 flex justify-between items-center px-[220px] max-[1470px]:px-[120px] max-[1100px]:px-[80px]'>
+    <div className={open ? 'overflow-hidden sticky top-0' : 'border-1 sticky top-0'}>
+    <nav className='absolute pt-8 w-[100%] h-[100px] flex justify-between items-center px-[220px] max-[1470px]:px-[120px] max-[1100px]:px-[80px]'>
       <img className='h-[64px]' src={Logo} alt="" />
       <ul className='flex gap-8 items-center max-[880px]:hidden'>
         <li className='text-[18px] text-white'>About</li>
