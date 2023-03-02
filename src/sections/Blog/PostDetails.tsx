@@ -10,11 +10,11 @@ export const PostDetails = () => {
   const {id} = useParams<PostInterface>()
 
   return (
-    <div className='bg-[#F2EFEA] py-[110px] px-[220px] max-[1470px]:mx-[120px] max-[1100px]:mx-[80px] max-[1100px]:my-[70px]'>
-      <p className='mt-[100px] mb-[10px] text-center font-medium text-[#8F8F8F]'>News</p>
-      <h2 className='text-green text-center text-[42px]'>{BLOG_DATA[id].title}</h2>
-      <p className='text-center'>{BLOG_DATA[id].description}</p>
-      <img className='my-[40px] w-[100%] h-[400px] object-cover' src={BLOG_DATA[id].image} alt="" />
+    <div className='py-[100px] px-[220px] max-[1470px]:px-[120px] max-[1100px]:px-[80px] flex flex-col items-center'>
+      <p className='mt-[90px] mb-[10px] text-center font-medium text-[#8F8F8F]'>News</p>
+      <h2 className='text-green text-center pt-6 pb-4 leading-[50px] text-[42px] max-[1400px]:w-[90%]'>{BLOG_DATA[id].title}</h2>
+      <p className='text-center max-[1400px]:w-[90%]'>{BLOG_DATA[id].description}</p>
+      <img className='mt-[20px] mb-[40px] w-[100%] h-[400px] object-cover' src={BLOG_DATA[id].image} alt="" />
       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo blanditiis maxime quaerat amet ratione, et, nesciunt dolor odit eveniet harum cum odio optio nemo voluptatum quo labore. Quo, in. Cum.
       Deserunt excepturi perspiciatis tempora. Esse consequuntur officia sunt nulla ex libero numquam enim, eaque error animi recusandae perspiciatis doloremque, inventore placeat? Ab excepturi id itaque eius mollitia libero eaque ipsa!
       Officiis esse ab, eos fugit atque saepe assumenda laboriosam aliquam dolorem molestias voluptatibus inventore asperiores quam cumque minima eius? Porro, id. Tempore iste necessitatibus laboriosam porro reprehenderit culpa asperiores eaque.

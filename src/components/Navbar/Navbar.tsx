@@ -20,7 +20,7 @@ export const Navbar = () => {
   document.body.style.overflow = valueOverflow;
 
   return (
-    <div className={open ? 'overflow-hidden sticky' : 'sticky top-0'}>
+    <div className={open ? 'overflow-hidden sticky top-0' : 'sticky top-0'}>
     <nav className={navbar ? 'active shadow absolute w-[100%] h-[100px] flex justify-between items-center px-[220px] max-[1470px]:px-[120px] max-[1100px]:px-[80px]' :  'absolute w-[100%] h-[100px] flex justify-between items-center px-[220px] max-[1470px]:px-[120px] max-[1100px]:px-[80px]'}>
       <img className='h-[64px]' src={Logo} alt="" />
       <ul className='flex gap-8 items-center max-[880px]:hidden'>
@@ -36,7 +36,7 @@ export const Navbar = () => {
         <span></span>
     </label>
     </nav>
-    { open ? <div className='bg-button w-[100%] h-[100vh] flex justify-center items-center overflow-hidden'>
+    { open ? <div className='bg-button w-[100%] h-[100vh] flex justify-center items-center'>
       <ul className='flex gap-12 items-center flex-col'>
         <li className='text-white text-[36px] font-semibold uppercase tracking-[6px]'>About</li>
         <li className='text-white text-[36px] font-semibold uppercase tracking-[6px]'>Planters</li>
