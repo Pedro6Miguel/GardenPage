@@ -16,7 +16,7 @@ export const Navbar = () => {
 
   window.addEventListener('scroll', changeBackground)
 
-  const valueOverflow = open ? 'hidden' : 'auto';
+  const valueOverflow = open ? 'hidden' : '';
   document.body.style.overflow = valueOverflow;
 
   return (
