@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import Logo from '../../../public/images/Logo.png'
+import Logo from '/images/Logo.png'
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false)

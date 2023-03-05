@@ -1,8 +1,8 @@
 import React from 'react'
 
-import IndoorPlant from '../../../public/images/Indoor_Plant.png'
-import OutdoorPlant from '../../../public/images/Outdoor_Plant.png'
-import Bamboo from '../../../public/images/Bamboo.png'
+import IndoorPlant from '/images/Indoor_Plant.png'
+import OutdoorPlant from '/images/Outdoor_Plant.png'
+import Bamboo from '/images/Bamboo.png'
 
 export const About = () => {
   return (

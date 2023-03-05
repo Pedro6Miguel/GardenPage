@@ -1,10 +1,10 @@
 import React from 'react'
 
-import Gallery1 from '../../../public/images/Gallery1.png'
-import Gallery2 from '../../../public/images/Gallery2.png'
-import Gallery3 from '../../../public/images/Gallery3.png'
-import Gallery4 from '../../../public/images/Gallery4.png'
-import Gallery5 from '../../../public/images/Gallery5.png'
+import Gallery1 from '/images/Gallery1.png'
+import Gallery2 from '/images/Gallery2.png'
+import Gallery3 from '/images/Gallery3.png'
+import Gallery4 from '/images/Gallery4.png'
+import Gallery5 from '/images/Gallery5.png'
 
 export const Gallery = () => {
   return (

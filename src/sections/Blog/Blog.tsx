@@ -2,8 +2,8 @@ import React from 'react'
 import { BLOG_DATA, BlogData } from './BlogData';
 import { useNavigate } from "react-router-dom";
 
-import Arrow from '../../../public/images/Arrow.png'
-import DateIcon from '../../../public/images/DateIcon.png'
+import Arrow from '/images/Arrow.png'
+import DateIcon from '/images/DateIcon.png'
 
 export const Blog = () => {
     const navigate = useNavigate();

@@ -1,10 +1,10 @@
 import React from 'react'
 
-import ProductsImg from '../../../public/images/ProductsImg.png'
-import TimeConsuming from '../../../public/images/TimeConsuming.png'
-import Grow from '../../../public/images/Grow.png'
-import Temperature from '../../../public/images/Temperature.png'
-import Pruning from '../../../public/images/Pruning.png'
+import ProductsImg from '/images/ProductsImg.png'
+import TimeConsuming from '/images/TimeConsuming.png'
+import Grow from '/images/Grow.png'
+import Temperature from '/images/Temperature.png'
+import Pruning from '/images/Pruning.png'
 
 export const ProductsInfo = () => {
   return (

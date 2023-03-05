@@ -1,11 +1,8 @@
 import React from 'react'
 
-import ReviewPic1 from '../../../public/images/ReviewPic1.png'
-import ReviewPic2 from '../../../public/images/ReviewPic2.png'
-import ReviewPic3 from '../../../public/images/ReviewPic3.png'
-import Zz_Plant from '../../../public/images/Zz_Plant.png'
-import Zz_Bamboo from '../../../public/images/Zz_Bamboo.png'
-import Zz_Snake from '../../../public/images/Zz_Snake.png'
+import ReviewPic1 from '/images/ReviewPic1.png'
+import ReviewPic2 from '/images/ReviewPic2.png'
+import ReviewPic3 from '/images/ReviewPic3.png'
 
 export const Reviews = () => {
   return (
