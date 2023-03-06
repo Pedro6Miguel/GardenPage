@@ -1,8 +1,30 @@
-import React from 'react'
+import { onAuthStateChanged, signOut } from 'firebase/auth'
+import React, { useState, useEffect } from 'react'
+import { auth } from '../../firebase/config'
 
 import HeroImg from '/images/Hero.png'
 
 export const Hero = () => {
+  const [authUser, setAuthUser] = useState(null)
+
+  useEffect(() => {
+    const listen = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setAuthUser(user)
+      } else {
+        setAuthUser(null)
+      }
+    })
+
+    return () => {
+      listen()
+    }
+  }, [])
+
+  const userSignOut = () => {
+    signOut(auth)
+  }
+
   return (
     <div>
         <img className='w-[100%] z-[-10] h-[758px] object-cover bg-bottom relative' src={HeroImg} alt="" />
@@ -14,6 +36,7 @@ export const Hero = () => {
                 <button className='h-[46px] px-10 border-2 text-white bg-button border-white ease-linear duration-100 hover:border-white hover:bg-[#dadcdc34]'>Watch Video</button>
             </div>
         </div>
+        {authUser ? <><p>{`Signin as ${authUser.email}`}</p><button onClick={userSignOut}>Signout</button></> : <>Noooooooooop</>}
     </div>
   )
 }
