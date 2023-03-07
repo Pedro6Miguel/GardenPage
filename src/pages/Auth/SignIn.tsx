@@ -31,7 +31,7 @@ export const SignIn = () => {
   return (
     <>
     <Navbar2 />
-    <div className='pt-[160px] flex justify-start'>
+    <div className='pt-[100px] flex justify-start max-[790px]:pt-[160px]'>
       <div className='w-[40%] max-[790px]:hidden'>
         <img className='ml-4 mt-4 mb-4 object-cover w-[100%] h-[800px]' src={HeroImg} alt="" />
       </div>
