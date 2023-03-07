@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import Logo from '/images/Logo.png'
 
 export const Navbar = () => {
+  const navigate = useNavigate()
+
   const [open, setOpen] = useState(false)
   const [navbar, setNavbar] = useState(false)
 
@@ -22,7 +25,7 @@ export const Navbar = () => {
   return (
     <div className={open ? 'overflow-hidden sticky top-0 z-[20]' : 'sticky top-0 z-[20]'}>
     <nav className={navbar ? 'active shadow absolute w-[100%] h-[100px] flex justify-between items-center px-[220px] max-[1470px]:px-[120px] max-[1100px]:px-[80px]' :  'absolute w-[100%] h-[100px] flex justify-between items-center px-[220px] max-[1470px]:px-[120px] max-[1100px]:px-[80px]'}>
-      <img className='h-[64px]' src={Logo} alt="" />
+      <img onClick={() => navigate('/')} className='h-[64px] cursor-pointer' src={Logo} alt="" />
       <ul className='flex gap-8 items-center max-[880px]:hidden'>
         <li className='text-[18px] text-white'>About</li>
         <li className='text-[18px] text-white'>Planters</li>
