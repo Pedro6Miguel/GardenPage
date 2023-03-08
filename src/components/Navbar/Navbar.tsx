@@ -27,10 +27,10 @@ export const Navbar = () => {
     <nav className={navbar ? 'active shadow absolute w-[100%] h-[100px] flex justify-between items-center px-[220px] max-[1470px]:px-[120px] max-[1100px]:px-[80px]' :  'absolute w-[100%] h-[100px] flex justify-between items-center px-[220px] max-[1470px]:px-[120px] max-[1100px]:px-[80px]'}>
       <img onClick={() => navigate('/')} className='h-[64px] cursor-pointer' src={Logo} alt="" />
       <ul className='flex gap-8 items-center max-[880px]:hidden'>
-        <li className='text-[18px] text-white'>About</li>
-        <li className='text-[18px] text-white'>Planters</li>
-        <li className='text-[18px] text-white'>Contact</li>
-        <li className='text-[18px] text-white border-2 px-12 py-2 rounded-[4px]'>Call Us</li>
+        <li className='cursor-pointer text-[18px] text-white'>About</li>
+        <li className='cursor-pointer text-[18px] text-white'>Planters</li>
+        <li className='cursor-pointer text-[18px] text-white'>Contact</li>
+        <li onClick={() => navigate('/login')} className='cursor-pointer text-[18px] text-white border-2 px-12 py-2 rounded-[4px]'>Login</li>
       </ul>
       <label className='min-[880px]:hidden' htmlFor="check">
         <input onClick={() => {setOpen(!open)}}  type="checkbox" id="check"/> 

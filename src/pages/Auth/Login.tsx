@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import { signInWithEmailAndPassword, signOut } from 'firebase/auth'
 import { auth } from '../../firebase/config'
+import { Navigate, useNavigate } from 'react-router-dom'
 
 import { Navbar2 } from '../../components/Navbar/Navbar2'
 
 import HeroImg from '/images/Hero.png'
 
 export const Login = () => {
+  const navigate = useNavigate()
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -38,7 +40,7 @@ export const Login = () => {
       </div>
       <div className='flex flex-col justify-center w-[60%] mt-4 mb-4 pl-[60px] max-[790px]:w-[100%] max-[790px]:mt-0 max-[790px]:mb-0 max-[790px]:px-[80px]'>
         <h3 className='leading-10'>Welcome to Lush Garden, <br></br> Sign In to Continue.</h3>
-        <p className='text-[16px] pt-4 pb-10'>Don't have an account? <span className='underline'>Create a account</span> <br></br>It takes less than a minute</p>
+        <p className='text-[16px] pt-4 pb-10'>Don't have an account? <span onClick={() => navigate('/signin')} className='cursor-pointer underline'>Create a account</span> <br></br>It takes less than a minute</p>
         <label htmlFor="" className='text-[13px] mb-2'>Email</label>
         <input 
             className='border-2 border-dark placeholder-dark text-dark h-[46px] rounded-[4px] mr-[220px] max-[1470px]:mr-[120px] max-[1100px]:mr-[80px] max-[790px]:mr-[0px]' 
