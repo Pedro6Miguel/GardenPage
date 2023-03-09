@@ -36,7 +36,7 @@ export const Hero = () => {
                 <button className='h-[46px] px-10 border-2 text-white bg-button border-white ease-linear duration-100 hover:border-white hover:bg-[#dadcdc34]'>Watch Video</button>
             </div>
         </div>
-        {authUser ? <><p>{`Signin as ${authUser.email}`}</p><button onClick={userSignOut}>Signout</button></> : <>Noooooooooop</>}
+        {/*{authUser ? <><p>{`Signin as ${authUser.email}`}</p><button onClick={userSignOut}>Signout</button></> : <>Noooooooooop</>}*/}
     </div>
   )
 }

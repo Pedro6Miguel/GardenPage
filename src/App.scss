@@ -134,3 +134,18 @@ input[type="checkbox"]:checked~span:nth-of-type(3) {
     top: 50%;
   }
 }
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #7d908c;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #687c77;
+}
