@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { signInWithEmailAndPassword, signOut } from 'firebase/auth'
+import React, { useState, useEffect } from 'react'
+import { signInWithEmailAndPassword, onAuthStateChanged, signOut } from 'firebase/auth'
 import { auth } from '../../firebase/config'
 import { Navigate, useNavigate } from 'react-router-dom'
 
@@ -12,8 +12,7 @@ export const Login = () => {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-
-  console.log(auth?.currentUser?.email)
+  const [authUser, setAuthUser] = useState(null)
 
   const signIn = async () => {
     try {
@@ -29,6 +28,24 @@ export const Login = () => {
     } catch(err) {
         console.error(err)
     }
+  }
+
+  useEffect(() => {
+    const listen = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setAuthUser(user)
+      } else {
+        setAuthUser(null)
+      }
+    })
+
+    return () => {
+      listen()
+    }
+  }, [])
+
+  const userSignOut = () => {
+    signOut(auth)
   }
 
   return (
@@ -55,8 +72,7 @@ export const Login = () => {
             placeholder='Enter your password'
             onChange={(e) => setPassword(e.target.value)} 
         />
-        <button className='mt-14 bg-dark h-[46px] mr-[220px] max-[1470px]:mr-[120px] max-[1100px]:mr-[80px] text-white max-[790px]:mr-[0px]' onClick={signIn}>Sign In</button>
-        <button className='mt-2 bg-dark h-[46px] mr-[220px] max-[1470px]:mr-[120px] max-[1100px]:mr-[80px] text-white max-[790px]:mr-[0px]' onClick={logout}>Logout</button>
+        {authUser ? <button className='mt-14 bg-dark h-[46px] mr-[220px] max-[1470px]:mr-[120px] max-[1100px]:mr-[80px] text-white max-[790px]:mr-[0px]' onClick={userSignOut}>Logout</button> : <button className='mt-14 bg-dark h-[46px] mr-[220px] max-[1470px]:mr-[120px] max-[1100px]:mr-[80px] text-white max-[790px]:mr-[0px]' onClick={signIn}>Sign In</button> }
       </div>
     </div>
     </>

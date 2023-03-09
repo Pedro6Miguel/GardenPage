@@ -2,6 +2,8 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import { BLOG_DATA, BlogData } from './BlogData';
 
+import { Navbar2 } from '../../components/Navbar/Navbar2';
+
 type PostInterface = {
   id: any;
 }
@@ -10,6 +12,8 @@ export const PostDetails = () => {
   const {id} = useParams<PostInterface>()
 
   return (
+    <>
+    <Navbar2 />
     <div className='py-[100px] px-[220px] max-[1470px]:px-[120px] max-[1100px]:px-[80px] flex flex-col items-center'>
       <p className='mt-[90px] mb-[10px] text-center font-medium text-[#8F8F8F]'>News</p>
       <h2 className='text-green text-center pt-6 pb-4 leading-[50px] text-[42px] max-[1400px]:w-[90%]'>{BLOG_DATA[id].title}</h2>
@@ -26,5 +30,6 @@ export const PostDetails = () => {
       Eligendi corrupti error voluptatibus molestiae accusantium ullam molestias obcaecati, soluta vel saepe laboriosam officiis perferendis maiores doloribus assumenda dolor voluptas facere. Et nostrum temporibus minima, earum quod fuga ut ipsam.
       Facilis doloremque accusantium veniam. Inventore, ipsam magnam quia sequi veniam in nemo impedit eligendi nostrum voluptate fuga quae asperiores optio error molestias vel cum, placeat dolorum! Reiciendis quod in quo.</p>
     </div>
+    </>
   )
 }

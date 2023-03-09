@@ -87,6 +87,11 @@ label span {
 
 }
 
+@media only screen and (max-height: 750px) {
+  #teste {
+    top: 50%;
+  }
+}
 
 span:nth-of-type(1) {
   width: 50%;

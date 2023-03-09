@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { onAuthStateChanged, signOut } from 'firebase/auth'
+import { auth } from '../../firebase/config'
 
 import Logo from '/images/Logo.png'
 
@@ -9,12 +11,32 @@ export const Navbar = () => {
   const [open, setOpen] = useState(false)
   const [navbar, setNavbar] = useState(false)
 
+  const [authUser, setAuthUser] = useState(null)
+
   const changeBackground = () => {
     if(window.scrollY >= 2) {
       setNavbar(true)
     } else {
       setNavbar(false)
     }
+  }
+
+  useEffect(() => {
+    const listen = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setAuthUser(user)
+      } else {
+        setAuthUser(null)
+      }
+    })
+
+    return () => {
+      listen()
+    }
+  }, [])
+
+  const userSignOut = () => {
+    signOut(auth)
   }
 
   window.addEventListener('scroll', changeBackground)
@@ -30,7 +52,8 @@ export const Navbar = () => {
         <li className='cursor-pointer text-[18px] text-white'>About</li>
         <li className='cursor-pointer text-[18px] text-white'>Planters</li>
         <li className='cursor-pointer text-[18px] text-white'>Contact</li>
-        <li onClick={() => navigate('/login')} className='cursor-pointer text-[18px] text-white border-2 px-12 py-2 rounded-[4px]'>Login</li>
+        { authUser ? <li onClick={userSignOut} className='cursor-pointer text-[18px] text-white border-2 px-12 py-2 rounded-[4px]'>Logout</li> : <li onClick={() => navigate('/login')} className='cursor-pointer text-[18px] text-white border-2 px-12 py-2 rounded-[4px]'>Login</li> }
+        
       </ul>
       <label className='min-[880px]:hidden' htmlFor="check">
         <input onClick={() => {setOpen(!open)}}  type="checkbox" id="check"/> 
@@ -44,7 +67,7 @@ export const Navbar = () => {
         <li className='text-white text-[36px] font-semibold uppercase tracking-[6px]'>About</li>
         <li className='text-white text-[36px] font-semibold uppercase tracking-[6px]'>Planters</li>
         <li className='text-white text-[36px] font-semibold uppercase tracking-[6px]'>Contact</li>
-        <li className='text-white text-[36px] font-semibold uppercase tracking-[6px]'>Call Us</li>
+        <li className='text-white text-[36px] font-semibold uppercase tracking-[6px]'>Login</li>
       </ul>
     </div>
     : ''
