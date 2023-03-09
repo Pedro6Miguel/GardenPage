@@ -5,7 +5,7 @@ import { auth } from '../../firebase/config'
 import HeroImg from '/images/Hero.png'
 
 export const Hero = () => {
-  const [authUser, setAuthUser] = useState(null)
+  const [authUser, setAuthUser] = useState(null || Object)
 
   useEffect(() => {
     const listen = onAuthStateChanged(auth, (user) => {

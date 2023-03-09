@@ -9,7 +9,7 @@ export const Navbar2 = () => {
   const navigate = useNavigate()
   const [open, setOpen] = useState(false)
   const [navbar, setNavbar] = useState(false)
-  const [authUser, setAuthUser] = useState(null)
+  const [authUser, setAuthUser] = useState(null || Object)
 
   const changeBackground = () => {
     if(window.scrollY >= 2) {

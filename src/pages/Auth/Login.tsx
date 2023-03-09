@@ -12,7 +12,7 @@ export const Login = () => {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [authUser, setAuthUser] = useState(null)
+  const [authUser, setAuthUser] = useState(null || Object)
 
   const signIn = async () => {
     try {
