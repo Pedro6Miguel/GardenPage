@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { signInWithEmailAndPassword, onAuthStateChanged, signOut } from 'firebase/auth'
 import { auth } from '../../firebase/config'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 import { Navbar2 } from '../../components/Navbar/Navbar2'
 
