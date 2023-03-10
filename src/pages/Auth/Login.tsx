@@ -10,6 +10,7 @@ import HeroImg from '/images/Hero.png'
 export const Login = () => {
   const navigate = useNavigate()
 
+  const [error, setError] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [authUser, setAuthUser] = useState(null || Object)
@@ -17,8 +18,9 @@ export const Login = () => {
   const signIn = async () => {
     try {
         await signInWithEmailAndPassword(auth, email, password)
+        setError(false)
     } catch(err) {
-      console.log(`Erro no código foi ${err}`)
+        setError(true)
     }
   }
 
@@ -73,6 +75,7 @@ export const Login = () => {
             onChange={(e) => setPassword(e.target.value)} 
         />
         {authUser ? <button className='mt-14 bg-dark h-[46px] mr-[220px] max-[1470px]:mr-[120px] max-[1100px]:mr-[80px] text-white max-[790px]:mr-[0px]' onClick={userSignOut}>Logout</button> : <button className='mt-14 bg-dark h-[46px] mr-[220px] max-[1470px]:mr-[120px] max-[1100px]:mr-[80px] text-white max-[790px]:mr-[0px]' onClick={signIn}>Sign In</button> }
+        {error && <span>Wrong mail or word</span>}
       </div>
     </div>
     </>
