@@ -18,7 +18,7 @@ export const Login = () => {
     try {
         await signInWithEmailAndPassword(auth, email, password)
     } catch(err) {
-        console.error(err)
+      console.log(`Erro no código foi ${err}`)
     }
   }
 
