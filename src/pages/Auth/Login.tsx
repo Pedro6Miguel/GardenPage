@@ -14,6 +14,7 @@ export const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [authUser, setAuthUser] = useState(null || Object)
+  const [message, setMessage] = useState("")
 
   const signIn = async () => {
     try {
@@ -50,6 +51,15 @@ export const Login = () => {
     signOut(auth)
   }
 
+  const emailValidation = () => {
+    const regEx = /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/
+    if(regEx.test(email)) {
+      setMessage("")
+    } else {
+      setMessage("Please introduce a properly formatted email")
+    }
+  }
+
   return (
     <>
     <Navbar2 />
@@ -67,6 +77,7 @@ export const Login = () => {
             placeholder='Enter your email' 
             onChange={(e) => setEmail(e.target.value)}    
         />
+        <div className='text-warning'>{message}</div>
         <label htmlFor="" className='text-[13px] mb-2 mt-6'>Password</label>
         <input 
             className='border-2 border-dark placeholder-dark text-dark h-[46px] rounded-[4px] mr-[220px] max-[1470px]:mr-[120px] max-[1100px]:mr-[80px] max-[790px]:mr-[0px]' 
@@ -74,8 +85,8 @@ export const Login = () => {
             placeholder='Enter your password'
             onChange={(e) => setPassword(e.target.value)} 
         />
-        {authUser ? <button className='mt-14 bg-dark h-[46px] mr-[220px] max-[1470px]:mr-[120px] max-[1100px]:mr-[80px] text-white max-[790px]:mr-[0px]' onClick={userSignOut}>Logout</button> : <button className='mt-14 bg-dark h-[46px] mr-[220px] max-[1470px]:mr-[120px] max-[1100px]:mr-[80px] text-white max-[790px]:mr-[0px]' onClick={signIn}>Sign In</button> }
-        {error && <span>Wrong mail or word</span>}
+        {authUser ? <button className='mt-14 bg-dark h-[46px] mr-[220px] max-[1470px]:mr-[120px] max-[1100px]:mr-[80px] text-white max-[790px]:mr-[0px]' onClick={userSignOut}>Logout</button> : <button className='mt-14 bg-dark h-[46px] mr-[220px] max-[1470px]:mr-[120px] max-[1100px]:mr-[80px] text-white max-[790px]:mr-[0px]' onClick={() => {signIn(), emailValidation()}}>Sign In</button> }
+        {error && <div className='pt-4 text-center text-warning mr-[220px] max-[1470px]:mr-[120px] max-[1100px]:mr-[80px] max-[790px]:mr-[0px]'>Wrong mail or word</div>}
       </div>
     </div>
     </>

@@ -12,14 +12,14 @@ export const SignIn = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [authUser, setAuthUser] = useState(null || Object)
-
-  console.log(auth?.currentUser?.email)
+  const [message, setMessage] = useState("")
+  const [error, setError] = useState(false)
 
   const signIn = async () => {
     try {
         await createUserWithEmailAndPassword(auth, email, password)
-    } catch(err) {
-        console.error(err)
+      } catch(err) {
+
     }
   }
 
@@ -49,6 +49,15 @@ export const SignIn = () => {
     signOut(auth)
   }
 
+  const emailValidation = () => {
+    const regEx = /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/
+    if(regEx.test(email)) {
+      setMessage("")
+    } else {
+      setMessage("Please introduce a properly formatted email")
+    }
+  }
+
   return (
     <>
     <Navbar2 />
@@ -65,16 +74,17 @@ export const SignIn = () => {
             placeholder='Enter your email' 
             onChange={(e) => setEmail(e.target.value)}    
         />
+        <div className='text-warning'>{message}</div>
         <label htmlFor="" className='text-[13px] mb-2 mt-6'>Password</label>
         <input 
-            className='border-2 border-dark placeholder-dark text-dark h-[46px] rounded-[4px] mr-[220px] max-[1470px]:mr-[120px] max-[1100px]:mr-[80px] max-[790px]:mr-[0px]' 
+            className='border-2 border-dark placeholder-dark text-dark h-[46px] rounded-[4px] mr-[220px] max-[1470px]:mr-[120px] max-[1100px]:mr-[80px] max-[790px]:mr-[0px] ' 
             type="password" 
             placeholder='Enter your password'
             onChange={(e) => setPassword(e.target.value)} 
         />
-        {authUser ? <button className='mt-14 bg-dark h-[46px] mr-[220px] max-[1470px]:mr-[120px] max-[1100px]:mr-[80px] text-white max-[790px]:mr-[0px]' onClick={userSignOut}>Logout</button> : <button className='mt-14 bg-dark h-[46px] mr-[220px] max-[1470px]:mr-[120px] max-[1100px]:mr-[80px] text-white max-[790px]:mr-[0px]' onClick={signIn}>Sign In</button> }
+        {authUser ? <button className='mt-14 bg-dark h-[46px] mr-[220px] max-[1470px]:mr-[120px] max-[1100px]:mr-[80px] text-white max-[790px]:mr-[0px]' onClick={userSignOut}>Logout</button> : <button className='mt-14 bg-dark h-[46px] mr-[220px] max-[1470px]:mr-[120px] max-[1100px]:mr-[80px] text-white max-[790px]:mr-[0px]' onClick={() => {signIn(), emailValidation()}}>Sign In</button> }
       </div>
-    </div>
+    </div>  
     </>
   )
 }

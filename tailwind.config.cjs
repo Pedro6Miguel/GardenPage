@@ -10,7 +10,8 @@ module.exports = {
       green: '#285A43',
       button: '#9DAEAB',
       dark: '#121212',
-      transparent: '#12121290'
+      transparent: '#12121290',
+      warning: '#cd0a0a'
     },
 
     extend: {},
